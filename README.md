@@ -1,33 +1,36 @@
+# LINUX SYSTEM ADMINISTRATION SCRIPTS
 
-#LINUX SYSTEM ADMINISTRATION SCRIPTS
+## PROJECT DESCRIPTION
+[![Linux](https://img.shields.io/badge/Platform-Linux-orange?logo=linux&logoColor=white)](https://www.linux.org/)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-Supported-orange?logo=ubuntu)](https://ubuntu.com/)
+[![CentOS](https://img.shields.io/badge/CentOS-Supported-green?logo=centos)](https://www.centos.org/)
+[![Debian](https://img.shields.io/badge/Debian-Supported-red?logo=debian)](https://www.debian.org/)
 
+A collection of bash scripts for Linux system administration, user management, file operations, and monitoring.
 
-##PROJECT DESCRIPTION:
-A collection of bash scripts for Linux system administration,
-user management, file operations, and monitoring.
+## REPOSITORY STRUCTURE
 
-##REPOSITORY STRUCTURE:
-
+```
 /monitoring/
   - system_info.sh          Display CPU, RAM, disk usage, and OS details
   - cpu_memory_monitor.sh   Real-time CPU and memory usage logging
 
-/users/*In Progress
+/users/ *In Progress
   - create_user.sh          Create new users with error checking
   - list_users.sh           List all users and their groups
 
-/files/*In Progress
+/files/ *In Progress
   - backup.sh               Compress and backup directories with timestamps
   - cleanup.sh              Delete files older than N days
 
-/networking/*In Progress
+/networking/ *In Progress
   - network_info.sh         Display IP addresses and open ports
 
-/automation/* In Progress
+/automation/ *In Progress
   - cron_setup.sh           Automate scheduling of tasks
+```
 
-
-##REQUIREMENTS:
+## REQUIREMENTS
 
 - Linux/Unix-based OS (Ubuntu, CentOS, Debian, etc.)
 - Bash shell (version 4.0+)
@@ -35,63 +38,105 @@ user management, file operations, and monitoring.
 - curl (for public IP in network_info.sh)
 - Common utilities: grep, awk, sed, find, tar
 
-##Installation:
-  https://www.linux.org/pages/download/
-  Ubuntu/Debian: sudo apt-get update && sudo apt-get install curl
-  CentOS/RHEL:   sudo yum install curl
+## Installation
 
-##QUICK START:
+**Linux Download:**
+https://www.linux.org/pages/download/
 
+**Ubuntu/Debian:**
+```bash
+sudo apt-get update && sudo apt-get install curl
+```
 
-1. Clone the repository:
-   git clone https://github.com/YOUR_USERNAME/linux-scripts.git
-   cd linux-scripts
+**CentOS/RHEL:**
+```bash
+sudo yum install curl
+```
 
-2. Make scripts executable:
-   chmod +x */*.sh
+## QUICK START
 
-3. Run a script:
-   ./monitoring/system_info.sh
-   ./users/create_user.sh
-   ./files/backup.sh /source/path /backup/path
+### 1. Clone the repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/linux-scripts.git
+cd linux-scripts
+```
 
+### 2. Make scripts executable:
+```bash
+chmod +x */*.sh
+```
 
-##SCRIPT USAGE EXAMPLES:
+### 3. Run a script:
+```bash
+./monitoring/system_info.sh
+./users/create_user.sh
+./files/backup.sh /source/path /backup/path
+```
 
+## SCRIPT USAGE EXAMPLES
 
-###MONITORING:
-  ./monitoring/system_info.sh
-    - Shows system information (hostname, OS, CPU, RAM, disk)
+### MONITORING
 
-  ./monitoring/cpu_memory_monitor.sh
-    - Logs CPU and memory usage every 5 seconds (press Ctrl+C to stop)
+**system_info.sh**
+```bash
+./monitoring/system_info.sh
+```
+- Shows system information (hostname, OS, CPU, RAM, disk)
 
-###USERS:
-  ./users/create_user.sh
-    - Creates a new user with home directory and password
-    - Includes duplicate user detection and validation
+**cpu_memory_monitor.sh**
+```bash
+./monitoring/cpu_memory_monitor.sh
+```
+- Logs CPU and memory usage every 5 seconds (press Ctrl+C to stop)
 
-  ./users/list_users.sh
-    - Lists all non-system users and their group memberships
+### USERS
 
-###FILES:
-  ./files/backup.sh /home/user /mnt/backups
-    - Creates timestamped compressed backup of /home/user
-    - Saves to /mnt/backups/backup_YYYYMMDD_HHMMSS.tar.gz
+**create_user.sh**
+```bash
+./users/create_user.sh
+```
+- Creates a new user with a home directory and a password
+- Includes duplicate user detection and validation
 
-  ./files/cleanup.sh /tmp
-    - Removes files in /tmp older than 30 days
+**list_users.sh**
+```bash
+./users/list_users.sh
+```
+- Lists all non-system users and their group memberships
 
-###NETWORKING:
-  ./networking/network_info.sh
-    - Displays local IP, public IP, and listening ports
+### FILES
 
-###AUTOMATION:
-  ./automation/cron_setup.sh
-    - Adds automated backup task to crontab (runs daily at 2 AM)
+**backup.sh**
+```bash
+./files/backup.sh /home/user /mnt/backups
+```
+- Creates timestamped compressed backup of /home/user
+- Saves to `/mnt/backups/backup_YYYYMMDD_HHMMSS.tar.gz`
 
+**cleanup.sh**
+```bash
+./files/cleanup.sh /tmp
+```
+- Removes files in `/tmp` older than 30 days
 
-##ERROR HANDLING:
+### NETWORKING
+
+**network_info.sh**
+```bash
+./networking/network_info.sh
+```
+- Displays local IP, public IP, and listening ports
+
+### AUTOMATION
+
+**cron_setup.sh**
+```bash
+./automation/cron_setup.sh
+```
+- Adds automated backup task to crontab (runs daily at 2 AM)
+
+## ERROR HANDLING
+
 All scripts include error checking for:
 - Empty or invalid input
 - Duplicate/existing users
@@ -99,65 +144,75 @@ All scripts include error checking for:
 - Missing files or directories
 - Permission issues
 
-Scripts use color-coded output:
-- GREEN   = Success
-- RED     = Error
-- YELLOW  = Warning
+### Color-Coded Output
+- 🟢 **GREEN** = Success
+- 🔴 **RED** = Error
+- 🟡 **YELLOW** = Warning
 
+## FEATURES
 
-##FEATURES:
-- Beginner-friendly with inline comments
-- Input validation and error handling
-- Color-coded output for clarity
-- Automatic cleanup on failures
-- Timestamp support for backups
-- Sudo privilege handling
-- Cross-platform Linux compatibility
+-  Beginner-friendly with inline comments
+-  Input validation and error handling
+-  Color-coded output for clarity
+-  Automatic cleanup on failures
+-  Timestamp support for backups
+-  Sudo privilege handling
+-  Cross-platform Linux compatibility
 
-##TROUBLESHOOTING:
+## TROUBLESHOOTING
 
-Permission Denied:
-  chmod +x script_name.sh
+### Permission Denied
+```bash
+chmod +x script_name.sh
+```
 
-Sudo Password Required:
-  Some scripts need sudo. Enter your password when prompted.
+### Sudo Password Required
+Some scripts need sudo. Enter your password when prompted.
 
-Command Not Found:
-  Ensure you're in the correct directory: cd linux-scripts/
+### Command Not Found
+Ensure you're in the correct directory:
+```bash
+cd linux-scripts/
+```
 
-Script Fails to Run:
-  Check shebang line: #!/bin/bash (should be first line)
-  Verify Bash version: bash --version
+### Script Fails to Run
+Check shebang line: `#!/bin/bash` (should be first line)
 
-##LEARNING RESOURCES:
+Verify Bash version:
+```bash
+bash --version
+```
 
-- Linux Command Line Basics: man bash
-- Bash Scripting Guide: https://www.gnu.org/software/bash/manual/
-- ShellCheck (Bash linter): https://www.shellcheck.net/
-- Linux System Administration: https://linux.die.net/
+## LEARNING RESOURCES
 
-##FUTURE IMPROVEMENTS : 
+- [Linux Command Line Basics](https://linux.die.net/) - `man bash`
+- [Bash Scripting Guide](https://www.gnu.org/software/bash/manual/)
+- [ShellCheck](https://www.shellcheck.net/) - Bash linter
+- [Linux System Administration](https://linux.die.net/)
 
-- Log Rotation Script, archive and compress old logs
-- Create Service Status, Monitor
+## FUTURE IMPROVEMENTS
+
+- Log Rotation Script - archive and compress old logs
+- Create Service Status Monitor
 - Add Disk Space Alert
 - Automated Security Updates
 - Database Backup Automation
 - System Health Dashboard
 - Email Notifications for Critical Alerts
-- Performance Tuning, optimize settings I/O scheduler
-- Automated System Report Generator 
+- Performance Tuning - optimize settings I/O scheduler
+- Automated System Report Generator
 
-##AUTHOR NOTES: 
+## AUTHOR NOTES
 
 Created for Linux system administration learning and portfolio building.
 
 For questions or issues, please open a GitHub Issue.
 
-##CHANGELOG:
-v1.0 (Initial Release)
-  - Added system monitoring scripts
-  - Added user management scripts with error checking
-  - Added file backup and cleanup scripts
-  - Added networking information script
-  - Added cron automation setup
+## CHANGELOG
+
+### v1.0 (Initial Release)
+- Added system monitoring scripts
+- Added user management scripts with error checking
+- Added file backup and cleanup scripts
+- Added networking information script
+- Added cron automation setup
