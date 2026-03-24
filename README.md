@@ -1,14 +1,12 @@
-====================================================
-LINUX SYSTEM ADMINISTRATION SCRIPTS
-====================================================
 
-PROJECT DESCRIPTION:
+#LINUX SYSTEM ADMINISTRATION SCRIPTS
+
+
+##PROJECT DESCRIPTION:
 A collection of bash scripts for Linux system administration,
 user management, file operations, and monitoring.
 
-====================================================
-REPOSITORY STRUCTURE:
-====================================================
+##REPOSITORY STRUCTURE:
 
 /monitoring/
   - system_info.sh          Display CPU, RAM, disk usage, and OS details
@@ -28,9 +26,8 @@ REPOSITORY STRUCTURE:
 /automation/* In Progress
   - cron_setup.sh           Automate scheduling of tasks
 
-====================================================
-REQUIREMENTS:
-====================================================
+
+##REQUIREMENTS:
 
 - Linux/Unix-based OS (Ubuntu, CentOS, Debian, etc.)
 - Bash shell (version 4.0+)
@@ -38,14 +35,13 @@ REQUIREMENTS:
 - curl (for public IP in network_info.sh)
 - Common utilities: grep, awk, sed, find, tar
 
-Installation:
+##Installation:
   https://www.linux.org/pages/download/
   Ubuntu/Debian: sudo apt-get update && sudo apt-get install curl
   CentOS/RHEL:   sudo yum install curl
 
-====================================================
-QUICK START:
-====================================================
+##QUICK START:
+
 
 1. Clone the repository:
    git clone https://github.com/YOUR_USERNAME/linux-scripts.git
@@ -59,18 +55,18 @@ QUICK START:
    ./users/create_user.sh
    ./files/backup.sh /source/path /backup/path
 
-====================================================
-SCRIPT USAGE EXAMPLES:
-====================================================
 
-MONITORING:
+##SCRIPT USAGE EXAMPLES:
+
+
+###MONITORING:
   ./monitoring/system_info.sh
     - Shows system information (hostname, OS, CPU, RAM, disk)
 
   ./monitoring/cpu_memory_monitor.sh
     - Logs CPU and memory usage every 5 seconds (press Ctrl+C to stop)
 
-USERS:
+###USERS:
   ./users/create_user.sh
     - Creates a new user with home directory and password
     - Includes duplicate user detection and validation
@@ -78,7 +74,7 @@ USERS:
   ./users/list_users.sh
     - Lists all non-system users and their group memberships
 
-FILES:
+###FILES:
   ./files/backup.sh /home/user /mnt/backups
     - Creates timestamped compressed backup of /home/user
     - Saves to /mnt/backups/backup_YYYYMMDD_HHMMSS.tar.gz
@@ -86,18 +82,16 @@ FILES:
   ./files/cleanup.sh /tmp
     - Removes files in /tmp older than 30 days
 
-NETWORKING:
+###NETWORKING:
   ./networking/network_info.sh
     - Displays local IP, public IP, and listening ports
 
-AUTOMATION:
+###AUTOMATION:
   ./automation/cron_setup.sh
     - Adds automated backup task to crontab (runs daily at 2 AM)
 
-====================================================
-ERROR HANDLING:
-====================================================
 
+##ERROR HANDLING:
 All scripts include error checking for:
 - Empty or invalid input
 - Duplicate/existing users
@@ -110,10 +104,8 @@ Scripts use color-coded output:
 - RED     = Error
 - YELLOW  = Warning
 
-====================================================
-FEATURES:
-====================================================
 
+##FEATURES:
 - Beginner-friendly with inline comments
 - Input validation and error handling
 - Color-coded output for clarity
@@ -122,9 +114,7 @@ FEATURES:
 - Sudo privilege handling
 - Cross-platform Linux compatibility
 
-====================================================
-TROUBLESHOOTING:
-====================================================
+##TROUBLESHOOTING:
 
 Permission Denied:
   chmod +x script_name.sh
@@ -139,20 +129,17 @@ Script Fails to Run:
   Check shebang line: #!/bin/bash (should be first line)
   Verify Bash version: bash --version
 
-====================================================
-LEARNING RESOURCES:
-====================================================
+##LEARNING RESOURCES:
 
 - Linux Command Line Basics: man bash
 - Bash Scripting Guide: https://www.gnu.org/software/bash/manual/
 - ShellCheck (Bash linter): https://www.shellcheck.net/
 - Linux System Administration: https://linux.die.net/
 
-====================================================
-FUTURE IMPROVEMENTS : 
-====================================================
-- Log Rotation Script, archve and compress old logs
-- Create Service Status Monitor
+##FUTURE IMPROVEMENTS : 
+
+- Log Rotation Script, archive and compress old logs
+- Create Service Status, Monitor
 - Add Disk Space Alert
 - Automated Security Updates
 - Database Backup Automation
@@ -161,22 +148,16 @@ FUTURE IMPROVEMENTS :
 - Performance Tuning, optimize settings I/O scheduler
 - Automated System Report Generator 
 
-===================================================
-AUTHOR NOTES: 
-====================================================
+##AUTHOR NOTES: 
 
 Created for Linux system administration learning and portfolio building.
 
 For questions or issues, please open a GitHub Issue.
 
-====================================================
-CHANGELOG:
-====================================================
+##CHANGELOG:
 v1.0 (Initial Release)
   - Added system monitoring scripts
   - Added user management scripts with error checking
   - Added file backup and cleanup scripts
   - Added networking information script
   - Added cron automation setup
-
-====================================================
